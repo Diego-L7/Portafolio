@@ -19,32 +19,31 @@
 
 <body>
     <!-- HEADER -->
-    <header class="flex w-full fixed top-0 z-1">
-        <nav class="flex justify-content-between w-full navbar">
-            <span class="logo cursor-pointer" onclick="scrollToSection('home')">
-                <img src="./assets/Logo.png" alt="Logo portafolio" width="50" height="50">
-            </span>
-            <input type="checkbox" aria-label="Checkbox para mostrar y quitar hamburger menu"
-                class="checkbox xl:hidden">
-            <div class="hamburger__lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-            </div>
-            <div class="header__info flex align-items-center gap-3">
-                <ul class="flex flex-column xl:flex-row list-none">
-                    <li><a href="about.html" target="_blank" class="no-underline">Sobre mí</a></li>
-                    <li onclick="scrollToSection('services')">Servicios</li>
-                    <li onclick="scrollToSection('portfolio')">Portafolio</li>
-                    <li onclick="scrollToSection('contact')">Contacto</li>
-                </ul>
-                <div class="hireMe__button pt-4">
-                    <a href="mailTo:john@email.com" aria-label="Enviar mensaje al correo"
-                        class="cursor-pointer no-underline border-round-lg text-xl xl:text-sm">Contratame</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <!-- HEADER -->
+<header class="flex w-full fixed top-0 z-1">
+    <nav class="flex justify-content-between w-full navbar">
+        <span class="logo cursor-pointer" onclick="scrollToSection('home')">
+            <img src="./assets/Logo.png" alt="Logo portafolio" width="50" height="50">
+        </span>
+        
+        <!-- ... (aquí va el checkbox y las líneas del hamburger) ... -->
+
+        <div class="header__info flex align-items-center gap-3">
+            <ul class="flex flex-column xl:flex-row list-none">
+                <li><a href="about.html" target="_blank" class="no-underline">Sobre mí</a></li>
+                <li onclick="scrollToSection('services')">Servicios</li>
+                <li onclick="scrollToSection('portfolio')">Portafolio</li>
+                <li onclick="scrollToSection('contact')">Contacto</li>
+            </ul>
+            
+            <!-- ESTE ES EL BOTÓN QUE DEBES EDITAR -->
+           <div class="hireMe__button">
+    <!-- Cambiamos el href por javascript:void(0) para que no intente recargar la página -->
+    <a href="javascript:void(0)" onclick="abrirModalContacto()" class="cursor-pointer no-underline border-round-lg text-xl xl:text-sm">Contratame</a>
+</div>
+        </div>
+    </nav>
+</header>
     <!--HOME PAGE -->
     <div class="container">
         <section id="home"
@@ -73,14 +72,16 @@
         </section>
     </div>
     <!--FREE LANCER SECTION -->
-    <section class="freelancer mb-4 mt-4 min-w-full flex flex-column justify-content-center align-items-center">
-        <p class="text-sm">Tienes un proyecto en mente?</p>
-        <h1 class="text-center">Estoy disponible como freelancer</h1>
-        <div class="hireMe__button pt-4">
-            <a href="mailTo:john@email.com" aria-label="Enviar mensaje al correo"
-                class="cursor-pointer no-underline border-round-lg">Escríbeme</a>
-        </div>
-    </section>
+  <!-- SECCIÓN FREELANCER -->
+<section class="freelancer ...">
+    <!-- ... -->
+    <div class="hireMe__button pt-4">
+        <a href="javascript:void(0)" onclick="abrirModalContacto()" 
+           class="cursor-pointer no-underline border-round-lg">
+           Escríbeme
+        </a>
+    </div>
+</section>
     <!--SERVICES -->
     <div class="container">
         <section id="services" class="services min-h-full w-full pb-7">
@@ -280,6 +281,27 @@
         </div>
     </div>
 
+<!-- Estructura del Modal de Contacto -->
+<div id="modalContacto" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar-modal" id="cerrarM">&times;</span>
+        <i class="fa-solid fa-paper-plane" style="font-size: 3rem; color: #6366f1; margin-bottom: 1rem;"></i>
+        <h2 style="color: #1e293b; margin: 0.5rem 0;">¡Trabajamos juntos!</h2>
+        <p style="color: #64748b; margin-bottom: 2rem;">Elige cómo prefieres contactarme para empezar tu proyecto.</p>
+        
+        <div class="modal-buttons flex flex-column gap-3">
+            <a href="https://wa.me/51942657886" target="_blank" class="btn-modal-link" style="background: #25D366;">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="mailto:tu-correo@gmail.com" class="btn-modal-link" style="background: #1e293b;">
+                <i class="fa-regular fa-envelope"></i> Enviar Email
+            </a>
+        </div>
+        
+        <button id="btnCerrarM" class="mt-4" style="background: none; border: none; color: #94a3b8; cursor: pointer; text-decoration: underline;">Cerrar</button>
+    </div>
+</div>
+
 </body>
 <script>
     const filterContainer = document.querySelector(".gallery__categories");
@@ -365,6 +387,65 @@
     function scrollToSection(sectionId){
         document.getElementById(sectionId).scrollIntoView({behavior:"smooth"})
     }
+
+
+    function abrirModalContacto() {
+    const modal = document.getElementById('modalContacto');
+    
+    if (modal) {
+        // Primero lo ponemos en display flex para que exista en el DOM
+        modal.style.display = 'flex';
+        
+        // Un pequeño delay para que la transición CSS de opacidad funcione
+        setTimeout(() => {
+            modal.classList.add('show');
+        }, 10);
+        
+        // Bloqueamos el scroll del portafolio
+        document.body.style.overflow = 'hidden';
+    } else {
+        console.error("No se encontró el modal con ID 'modalContacto'");
+    }
+}
+
+// Función para cerrar (asígnala a tus botones de cerrar)
+function cerrarModalContacto() {
+    const modal = document.getElementById('modalContacto');
+    modal.classList.remove('show');
+    document.body.style.overflow = 'auto';
+    
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 300);
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.getElementById('modalContacto');
+    const btnAbrir = document.getElementById('btnAbrirModal');
+    
+    // Elementos de cierre
+    const cerrarX = document.getElementById('cerrarM');
+    const cerrarTexto = document.getElementById('btnCerrarM');
+
+    // Función unificada para cerrar
+    const cerrarTodo = () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    };
+
+    // Asignar eventos si los elementos existen
+    if (cerrarX) cerrarX.onclick = cerrarTodo;
+    if (cerrarTexto) cerrarTexto.onclick = cerrarTodo;
+
+    // Cerrar también si hacen clic fuera de la caja blanca
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            cerrarTodo();
+        }
+    };
+});
+    
 </script>
 
 </html>

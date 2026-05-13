@@ -997,3 +997,56 @@ footer {
     }
 }
 
+/* --- ESTILOS DEL MODAL INTEGRADO --- */
+/* Estilos base del Modal */
+.modal {
+    display: none; /* Se activa con JS */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(15, 23, 42, 0.9); /* Fondo oscuro profundo */
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+/* Caja blanca del contenido */
+.modal-contenido {
+    background: #ffffff;
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    width: 90%;
+    max-width: 400px; /* Esto evita que se vea como una línea larga */
+    text-align: center;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* La X para cerrar */
+.cerrar-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #94a3b8;
+    cursor: pointer;
+}
+
+/* Botones internos del modal */
+.btn-modal-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.btn-modal-link:hover {
+    transform: scale(1.02);
+}
