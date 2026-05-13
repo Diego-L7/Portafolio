@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../Portafolio"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "startbootstrap-sb-admin-2-gh-pages"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Portfolio-template-main"
+	}
+}

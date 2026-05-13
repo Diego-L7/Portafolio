@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Template portafolio desarrollador UI/UX " />
+    <title>Portafolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/primeflex@^3/primeflex.css">
+    <link rel="stylesheet" href="https://unpkg.com/primeflex/themes/saga-blue.css">
+    <script src="https://kit.fontawesome.com/b3f17f1dac.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="flex w-full fixed top-0 z-1">
+        <nav class="flex justify-content-between w-full navbar">
+            <span class="logo cursor-pointer" onclick="scrollToSection('home')">
+                <img src="./assets/Logo.png" alt="Logo portafolio" width="50" height="50">
+            </span>
+            <input type="checkbox" aria-label="Checkbox para mostrar y quitar hamburger menu"
+                class="checkbox xl:hidden">
+            <div class="hamburger__lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <div class="header__info flex align-items-center gap-3">
+                <ul class="flex flex-column xl:flex-row list-none">
+                    <li><a href="about.html" target="_blank" class="no-underline">Sobre mí</a></li>
+                    <li onclick="scrollToSection('services')">Servicios</li>
+                    <li onclick="scrollToSection('portfolio')">Portafolio</li>
+                    <li onclick="scrollToSection('contact')">Contacto</li>
+                </ul>
+                <div class="hireMe__button pt-4">
+                    <a href="mailTo:john@email.com" aria-label="Enviar mensaje al correo"
+                        class="cursor-pointer no-underline border-round-lg text-xl xl:text-sm">Contratame</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--HOME PAGE -->
+    <div class="container">
+        <section id="home"
+            class="home__page flex align-items-center justify-content-center xl\:justify-content-between grid grid-nogutter gap-4">
+            <div class="left__content col-12 xl:col-6">
+                <div class="message__bubble triangle mb-4 md:mb-2">
+                    <div class="message__text p-2 sm:p-3 text-center">
+                        <p>Hola, Yo soy</p>
+                    </div>
+                </div>
+                <h1 class="text-3xl sm:text-5xl md:text-7xl">Diego Luyo</h1>
+                <p class="text-gray-500">
+                    Desarrollador web y móvil especializado en crear experiencias digitales atractivas y funcionales.
+                </p>
+                <div class="home__buttons flex align-items-center gap-2 mt-6">
+                    <a href="./assets/CURRICULUM.pdf" aria-label="Descargar curriculum"
+                        class="cursor-pointer border-round-lg no-underline" download="Diego-Luyo-CV.pdf">Descargar CV</a>
+                    <button onclick="scrollToSection('portfolio')" aria-label="Deslizar a sección portafolio para mostrar mis trabajos"
+                        class="cursor-pointer border-round-lg">Mi trabajo</button>
+                    <a href="./startbootstrap-sb-admin-2-gh-pages/index.html" target="_blank" aria-label="Abrir panel administrativo" class="cursor-pointer border-round-lg no-underline">Abrir dashboard</a>
+                </div>
+            </div>
+            <div class="right__content col-9 sm:col-6 xl:col-5">
+                <img src="./assets/foto-perfil.jpg" alt="Foto perfil" width="100" height="100">
+            </div>
+        </section>
+    </div>
+    <!--FREE LANCER SECTION -->
+    <section class="freelancer mb-4 mt-4 min-w-full flex flex-column justify-content-center align-items-center">
+        <p class="text-sm">Tienes un proyecto en mente?</p>
+        <h1 class="text-center">Estoy disponible como freelancer</h1>
+        <div class="hireMe__button pt-4">
+            <a href="mailTo:john@email.com" aria-label="Enviar mensaje al correo"
+                class="cursor-pointer no-underline border-round-lg">Escríbeme</a>
+        </div>
+    </section>
+    <!--SERVICES -->
+    <div class="container">
+        <section id="services" class="services min-h-full w-full pb-7">
+            <div class="services__title flex flex-column gap-3 text-center">
+                <h1 class="text-3xl md:text-5xl">Mis servicios</h1>
+                <p class="text-gray-400 text-sm md:text-base">
+                    OFRECEMOS UNA AMPLIA GAMA DE SERVICIOS PARA SATISFACER TUS NECESIDADES.
+                </p>
+            </div>
+            <div class="services__card w-full grid grid-nogutter mt-7 gap-5">
+                <div class="card flex flex-column align-items-center justify-content-center col-12 sm:col-6 lg:col-4 gap-3 p-2 text-center">
+                    <div class="service__logo flex align-items-center justify-content-center">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
+                    <div class="service__name">
+                        <p>HTML</p>
+                    </div>
+                </div>
+                <div class="card flex flex-column align-items-center justify-content-center col-12 sm:col-6 lg:col-4 gap-3 p-2 text-center">
+                    <div class="service__logo flex align-items-center justify-content-center">
+                        <i class="fa-brands fa-wordpress"></i>
+                    </div>
+                    <div class="service__name">
+                        <p>WordPress</p>
+                    </div>
+                </div>
+                <div class="card flex flex-column align-items-center justify-content-center col-12 sm:col-6 lg:col-4 gap-3 p-2 text-center">
+                    <div class="service__logo flex align-items-center justify-content-center">
+                        <i class="fa-brands fa-angular"></i>
+                    </div>
+                    <div class="service__name">
+                        <p>Angular</p>
+                    </div>
+                </div>
+                <div class="card flex flex-column align-items-center justify-content-center col-12 sm:col-6 lg:col-4 gap-3 p-2 text-center">
+                    <div class="service__logo flex align-items-center justify-content-center">
+                        <i class="fa-brands fa-react"></i>
+                    </div>
+                    <div class="service__name">
+                        <p>React JS</p>
+                    </div>
+                </div>
+                <div class="card flex flex-column align-items-center justify-content-center col-12 sm:col-6 lg:col-4 gap-3 p-2 text-center">
+                    <div class="service__logo flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <div class="service__name">
+                        <p>Desarrollo Móvil</p>
+                    </div>
+                </div>
+                <div class="card flex flex-column align-items-center justify-content-center col-12 sm:col-6 lg:col-4 gap-3 p-2 text-center">
+                    <div class="service__logo flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div class="service__name">
+                        <p>Desarrollo Web</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--PORTFOLIO -->
+        <section id="portfolio" class="portfolio min-h-full w-full pb-8 pt-8">
+            <div class="portfolio__title flex flex-column gap-3 text-center">
+                <h1 class="text-3xl md:text-5xl">Mi trabajo</h1>
+                <p class="text-gray-400 text-sm md:text-base">
+                     Alguno de los proyevtos realizados.
+                </p>
+            </div>
+            <div class="portfolio__gallery">
+                <div class="gallery__categories mb-5 mt-5">
+                    <ul class="flex list-none flex-wrap justify-content-center gap-3">
+                        <li class="filter-item active" data-filter="all">Todos</li>
+                        <li class="filter-item " data-filter="gym">Gimnasio</li>
+                        <li class="filter-item " data-filter="tours__Web">Tours web</li>
+                        <li class="filter-item " data-filter="world__Tours">Inmobiliaria web</li>
+                        <li class="filter-item " data-filter="e__commerce">E-commerce</li>
+                    </ul>
+                </div>
+                <div class="proyect__gallery flex justify-content-center align-items-center flex-wrap gap-3">
+                    <div class="project__card tours__Web">
+                        <img src="./assets/proyecto-1.png" alt="">
+                        <div class="overlay"></div>
+                        <div
+                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                            <h2>Travel Tours</h2>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam quae obcaecati amet
+                            </p>
+                            <span><i class="fa-solid fa-arrow-right-long"></i></span>
+                        </div>
+                    </div>
+                    <div class="project__card e__commerce">
+                        <img src="./assets/proyecto-2.png" alt="">
+                        <div class="overlay"></div>
+                        <div
+                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                            <h2>Travel Tours</h2>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam quae obcaecati amet
+                            </p>
+                            <span><i class="fa-solid fa-arrow-right-long"></i></span>
+                        </div>
+                    </div>
+                    <div class="project__card tours__Web">
+                        <img src="./assets/proyecto-3.png" alt="">
+                        <div class="overlay"></div>
+                        <div
+                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                            <h2>Travel Tours</h2>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam quae obcaecati amet
+                            </p>
+                            <span><i class="fa-solid fa-arrow-right-long"></i></span>
+                        </div>
+                    </div>
+                    <div class="project__card gym">
+                        <img src="./assets/proyecto-4.jpeg" alt="">
+                        <div class="overlay"></div>
+                        <div
+                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                            <h2>Travel Tours</h2>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam quae obcaecati amet
+                            </p>
+                            <span><i class="fa-solid fa-arrow-right-long"></i></span>
+                        </div>
+                    </div>
+                    <div class="project__card world__Tours">
+                        <img src="./assets/proyecto-5.jpg" alt="">
+                        <div class="overlay"></div>
+                        <div
+                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                            <h2>Travel Tours</h2>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam quae obcaecati amet
+                            </p>
+                            <span><i class="fa-solid fa-arrow-right-long"></i></span>
+                        </div>
+                    </div>
+                    <div class="project__card tours__Web">
+                        <img src="./assets/proyecto-6.webp" alt="">
+                        <div class="overlay"></div>
+                        <div
+                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                            <h2>Travel Tours</h2>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam quae obcaecati amet
+                            </p>
+                            <span><i class="fa-solid fa-arrow-right-long"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--FOOTER -->
+        <footer id="contact" class="contact-section w-full flex justify-content-center pb-8 pt-8 lg:text-center">
+            <div class="contact-card w-full sm:w-11/12 lg:w-9/12 xl:w-7/12">
+                <h2 class="text-center mb-6">CONTACTAME</h2>
+                <form class="contact-form" action="#" method="post" onsubmit="event.preventDefault()">
+                    <input type="email" placeholder="Ingrese su correo" aria-label="Ingrese su correo" required>
+                    <textarea placeholder="Escribe un mensaje" aria-label="Escribe un mensaje" rows="8" required></textarea>
+                    <button type="submit" class="contact-submit">ENVIAR</button>
+                </form>
+                <div class="contact-socials mt-6">
+                    <p class="social-text">También puedes escribirme por redes sociales</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://wa.me/51942657886" target="_blank" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="chatbot-widget" id="chatbotWidget">
+        <button class="chatbot-toggle" id="chatbotToggle">
+            <i class="fa-solid fa-comments"></i>
+            Chat
+        </button>
+        <div class="chatbot-panel" id="chatbotPanel">
+            <div class="chatbot-header">
+                Chat Bot
+                <button class="chatbot-close" id="chatbotClose" aria-label="Cerrar chat">×</button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="chatbot-message bot">Hola, soy tu asistente. ¿En qué puedo ayudarte?</div>
+            </div>
+            <div class="chatbot-input-area">
+                <input id="chatInput" type="text" placeholder="Escribe tu mensaje..." aria-label="Mensaje de chat">
+                <button id="chatSend" class="chatbot-send">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    const filterContainer = document.querySelector(".gallery__categories");
+    const galleryItems = document.querySelectorAll(".project__card");
+    const chatbotToggle = document.getElementById("chatbotToggle");
+    const chatbotPanel = document.getElementById("chatbotPanel");
+    const chatbotClose = document.getElementById("chatbotClose");
+    const chatSend = document.getElementById("chatSend");
+    const chatInput = document.getElementById("chatInput");
+    const chatMessages = document.getElementById("chatbotMessages");
+
+    filterContainer.addEventListener("click", (event) => {
+        if (event.target.classList.contains("filter-item")) {
+            filterContainer.querySelector(".active").classList.remove("active");
+            event.target.classList.add("active")
+            const filterValue = event.target.getAttribute("data-filter")
+            galleryItems.forEach(item => {
+                if (item.classList.contains(filterValue) || filterValue === "all") {
+                    item.classList.remove("hide")
+                    item.classList.add("show")
+                } else {
+                    item.classList.remove("show")
+                    item.classList.add("hide")
+                }
+            })
+        }
+    })
+
+    chatbotToggle.addEventListener("click", () => {
+        chatbotPanel.classList.toggle("open");
+    });
+
+    chatbotClose.addEventListener("click", () => {
+        chatbotPanel.classList.remove("open");
+    });
+
+    chatSend.addEventListener("click", () => {
+        sendChatMessage();
+    });
+
+    chatInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            sendChatMessage();
+        }
+    });
+
+    function sendChatMessage() {
+        const text = chatInput.value.trim();
+        if (!text) return;
+
+        addMessage(text, "user");
+        chatInput.value = "";
+        chatInput.focus();
+
+        setTimeout(() => {
+            const answer = getBotResponse(text.toLowerCase());
+            addMessage(answer, "bot");
+        }, 500);
+    }
+
+    function addMessage(message, sender) {
+        const messageEl = document.createElement("div");
+        messageEl.className = `chatbot-message ${sender}`;
+        messageEl.textContent = message;
+        chatMessages.appendChild(messageEl);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function getBotResponse(text) {
+        if (text.includes("hola") || text.includes("buenos")) {
+            return "¡Hola! Soy tu asistente. Puedo ayudarte con información sobre mis servicios o cómo contactarme.";
+        }
+        if (text.includes("servicio") || text.includes("trabajo")) {
+            return "Ofrezco desarrollo web, aplicaciones móviles, diseño UI/UX y mantenimiento de sitios.";
+        }
+        if (text.includes("contacto") || text.includes("contratame")) {
+            return "Puedes escribirme a john@email.com o usar el botón Contratame en la página.";
+        }
+        return "Gracias por tu mensaje. Estoy aquí para ayudar: ¿quieres saber sobre mis servicios, portafolio o contacto?";
+    }
+
+    function scrollToSection(sectionId){
+        document.getElementById(sectionId).scrollIntoView({behavior:"smooth"})
+    }
+</script>
+
+</html>
